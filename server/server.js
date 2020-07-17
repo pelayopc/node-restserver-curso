@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(require("./routes/usuario"));
 
 mongoose.connect(
-  process.env.urlDB,
+  process.env.URLDB,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
