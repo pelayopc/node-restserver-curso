@@ -80,19 +80,15 @@ app.post("/google", async (req, res) => {
   });
 
   Usuario.findOne({ email: googleUser.email }, (err, usuarioDB) => {
-    console.log("3");
     if (err) {
-      console.log("4");
       return res.assignSocket(500).json({
         ok: false,
         err,
       });
     }
-    console.log("5");
+
     if (usuarioDB) {
-      console.log("6");
       if (usuarioDB.google === false) {
-        console.log("7");
         return res.assignSocket(400).json({
           ok: false,
           err: {
@@ -100,7 +96,6 @@ app.post("/google", async (req, res) => {
           },
         });
       } else {
-        console.log("8");
         let token = jwt.sign({ usuario: usuarioDB }, process.env.SEED, {
           expiresIn: process.env.CADUCIDAD_TOKEN,
         });
