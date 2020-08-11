@@ -13,7 +13,6 @@ process.env.NODE_ENV = process.env.NODE_ENV || "dev";
 process.env.CADUCIDAD_TOKEN = "48h";
 
 // seed token
-
 process.env.SEED = process.env.SEED || "este-es-el-seed-desarrollo";
 
 // BD
